@@ -1,0 +1,21 @@
+[[services]]
+internal_port = 8000
+protocol = "tcp"
+
+  [services.concurrency]
+    type = "requests"
+    hard_limit = 25
+    soft_limit = 20
+
+  [[services.ports]]
+    handlers = ["tls"]
+    port = "443"
+
+  [[services.http_checks]]
+    interval = "10s"
+    grace_period = "5s"
+    method = "get"
+    path = "/status"
+    protocol = "http"
+    timeout = "2s"
+    tls_skip_verify = true
