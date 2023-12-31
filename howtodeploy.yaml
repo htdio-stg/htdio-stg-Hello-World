@@ -1,0 +1,16 @@
+name: yolo
+logo: https://wallpapers.com/images/hd/funny-chihuahua-pictures-s3kabfqmmi9js6qq.jpg
+providers:
+  - render
+  - digitalocean
+services:
+  - type: docker
+    name: surrealdb
+    dockerfile:
+      - FROM surrealdb/surrealdb:latest
+    instance_count: 1
+    http_port: 8000
+    health_check:
+      port: 8000
+      http_path: /status
+      initial_delay_seconds: 10
