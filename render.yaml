@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: surrealdb
+    env: docker
+    plan: free
+    numInstances: 1
+    healthCheckPath: /status
+    envVars:
+      - key: PORT
+        value: 8000
