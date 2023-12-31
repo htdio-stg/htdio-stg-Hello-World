@@ -1,0 +1,15 @@
+spec:
+  name: yolo
+  services:
+    - name: surrealdb
+      git:
+        repo_clone_url: https://github.com/htdio-stg/htdio-stg-Hello-World
+        branch: main
+      dockerfile_path: Dockerfile
+      instance_count: 1
+      http_port: 8000
+      health_check:
+        port: 8000
+        http_path: /status
+        initial_delay_seconds: 10
+      envs: []
