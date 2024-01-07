@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+  EnvType:
+    Description: Environment type.
+    Default: test
+    Type: String
+    AllowedValues:
+      - prod
+      - dev
+      - test
+    ConstraintDescription: must specify prod, dev, or test.
+Resources:
+  SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow connections from specified source security group
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: "22"
+          ToPort: "22"
+          SourceSecurityGroupName: MyAdminSecurityGroup
+          SourceSecurityGroupOwnerId: 1111-2222-3333
+        - IpProtocol: tcp
+          FromPort: "80"
+          ToPort: "80"
+          SourceSecurityGroupName:
+            Ref: MySecurityGroupCreatedInCFNTemplate
