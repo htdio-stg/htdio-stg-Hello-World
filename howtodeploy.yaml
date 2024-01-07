@@ -6,6 +6,7 @@ web_links:
 providers:
   - render
   - digitalocean
+  - aws
 services:
   - type: docker
     name: surrealdb
