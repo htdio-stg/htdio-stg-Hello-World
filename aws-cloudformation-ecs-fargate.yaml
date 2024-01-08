@@ -5,13 +5,13 @@ Parameters:
 
   ServiceName:
     Type: String
-    Default: <ParameterServiceName>
+    Default: 
   Image:
     Type: String
-    Default: <ParameterImage>
+    Default: docker.io/nginx:latest
   ContainerPort:
     Type: Number
-    Default: <ParameterContainerPort>
+    Default: 8000
   VPC:
     Type: AWS::EC2::VPC::Id    
   SubnetA:
