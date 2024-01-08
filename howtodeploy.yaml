@@ -7,6 +7,7 @@ providers:
   - render
   - digitalocean
   - aws
+  - docker
 services:
   - type: docker
     name: surrealdb
