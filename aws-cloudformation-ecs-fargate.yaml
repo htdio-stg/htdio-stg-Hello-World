@@ -5,10 +5,10 @@ Parameters:
 
   ServiceName:
     Type: String
-    Default: 
+    Default: howtodeploy-yolo
   Image:
     Type: String
-    Default: docker.io/nginx:latest
+    Default: docker.io/undefinedsurrealdb/surrealdb:latest
   ContainerPort:
     Type: Number
     Default: 8000
