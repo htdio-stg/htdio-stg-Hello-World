@@ -1,10 +1,15 @@
 services:
-  - type: web
-    name: surrealdb
-    env: docker
-    plan: free
-    numInstances: 1
-    healthCheckPath: /status
+  - name: yabin
+    type: web
+    runtime: image
+    image:
+      url: docker.io/yureien/yabin:latest
+    startCommand: ""
+    plan: starter
+    region: oregon
     envVars:
       - key: PORT
-        value: 8000
+        value: "3000"
+  - type: redis
+    name: db-redis
+    plan: starter
